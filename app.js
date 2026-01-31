@@ -102,3 +102,50 @@ document.addEventListener('DOMContentLoaded', () => {
     addOption('Επιλογή 1');
     addOption('Επιλογή 2');
 });
+
+// --- Αποθήκευση, Εκτύπωση PDF, Προβολή Αποθηκευμένων ---
+function saveCurrentState() {
+    const state = {
+        criteria: JSON.parse(JSON.stringify(criteria)),
+        options: JSON.parse(JSON.stringify(options)),
+        date: new Date().toLocaleString()
+    };
+    let saved = JSON.parse(localStorage.getItem('mcda_saved') || '[]');
+    saved.push(state);
+    localStorage.setItem('mcda_saved', JSON.stringify(saved));
+    alert('Η τρέχουσα κατάσταση αποθηκεύτηκε!');
+}
+
+function printAsPDF() {
+    window.print();
+}
+
+function showSavedStates() {
+    let saved = JSON.parse(localStorage.getItem('mcda_saved') || '[]');
+    if (saved.length === 0) {
+        alert('Δεν υπάρχουν αποθηκευμένες καταστάσεις.');
+        return;
+    }
+    let html = '<h3>Αποθηκευμένες Καταστάσεις</h3>';
+    html += '<ul style="padding-left:18px;">';
+    saved.forEach((s, idx) => {
+        html += `<li><b>${s.date}</b> <button onclick="loadSavedState(${idx})">Φόρτωση</button></li>`;
+    });
+    html += '</ul>';
+    const win = window.open('', '', 'width=500,height=600');
+    win.document.write('<html><head><title>Αποθηκευμένες Καταστάσεις</title></head><body>' + html + '</body></html>');
+    win.loadSavedState = function(idx) {
+        window.loadSavedState(idx);
+        win.close();
+    };
+}
+
+window.loadSavedState = function(idx) {
+    let saved = JSON.parse(localStorage.getItem('mcda_saved') || '[]');
+    if (!saved[idx]) return;
+    criteria = JSON.parse(JSON.stringify(saved[idx].criteria));
+    options = JSON.parse(JSON.stringify(saved[idx].options));
+    renderCriteria();
+    renderOptions();
+    calculateScores();
+}
