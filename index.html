@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCDA - Σταθμισμένος Πίνακας Αποφάσεων</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header-flex">
+            <img src="../Logo.png" alt="Logo" class="main-logo">
+            <h1>Σταθμισμένος Πίνακας Αποφάσεων</h1>
+        </div>
+        <form id="mcda-form">
+            <div id="criteria-section">
+                <h2>Κριτήρια &amp; Βαρύτητες</h2>
+                <div id="criteria-list"></div>
+                <button type="button" onclick="addCriterion()">+ Προσθήκη Κριτηρίου</button>
+            </div>
+            <div id="options-section">
+                <h2>Επιλογές</h2>
+                <div id="options-list"></div>
+                <button type="button" onclick="addOption()">+ Προσθήκη Επιλογής</button>
+            </div>
+            <button type="button" onclick="calculateScores()">Υπολογισμός</button>
+        </form>
+        <div id="results"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

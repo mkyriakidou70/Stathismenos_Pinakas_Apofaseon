@@ -1,0 +1,199 @@
+h1 {
+    /* ...existing code... */
+}
+.header-flex {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 0;
+    background: #e0f4e1;
+    padding: 8px 0 8px 0;
+}
+.main-logo {
+    width: auto;
+    max-width: 170px;
+    max-height: 120px;
+    height: auto;
+    object-fit: contain;
+    margin-left: 12px;
+}
+.header-flex h1 {
+    color: #20511c;
+    text-align: left;
+    font-size: 2.2rem;
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    margin: 0 0 0 18px;
+    flex: 1;
+    line-height: 1.08;
+}
+#region Gradient background and card style
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #7b6eea 0%, #5a8dee 100%);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 700px;
+    margin: 48px auto;
+    background: #e0f4e3; /* κυπαρισσί ανοιχτό */
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(80, 80, 160, 0.18);
+    padding: 36px 28px 28px 28px;
+}
+h1 {
+    color: #20511c;
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 32px;
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+}
+
+.section-title {
+    color: #20511c;
+    font-size: 1.6rem;
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    margin-top: 32px;
+    margin-bottom: 18px;
+}
+h2 {
+    color: #49581f;
+    margin-top: 32px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.container label, .container #criteria-section h2, .container #options-section h2 {
+    color: #20511c;
+    font-weight: bold;
+}
+
+.section-title-small {
+    color: #20511c;
+    font-size: 1.6rem;
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    margin-top: 32px;
+    margin-bottom: 18px;
+}
+#endregion
+
+#criteria-list, #options-list {
+    margin-bottom: 16px;
+}
+.criterion {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+.criterion button {
+    min-width: 28px;
+    max-width: 28px;
+    height: 28px;
+    padding: 0;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.criterion input[type="text"] {
+    margin-right: 8px;
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 28px;
+    box-sizing: border-box;
+}
+.criterion input[type="number"] {
+    width: 60px;
+    margin-right: 8px;
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 28px;
+    box-sizing: border-box;
+}
+.option-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 12px;
+}
+.option-table th, .option-table td {
+    border: 1px solid #e0e0e0;
+    padding: 6px 4px;
+    text-align: center;
+    font-size: 15px;
+}
+.option-table input[type="text"] {
+    width: 110px;
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 28px;
+    box-sizing: border-box;
+}
+.option-table input[type="number"] {
+    width: 50px;
+    padding: 4px 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 28px;
+    box-sizing: border-box;
+}
+.option-table button {
+    background: #20511c;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    min-width: 28px;
+    max-width: 28px;
+    height: 28px;
+    padding: 0;
+    cursor: pointer;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    transition: background 0.2s;
+}
+.option-table button:hover {
+    background: #174d26;
+}
+button {
+    background: #084b26;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 3px 10px;
+    min-height: 28px;
+    cursor: pointer;
+    margin-top: 8px;
+    font-size: 0.98rem;
+    box-shadow: 0 2px 6px rgba(58, 67, 34, 0.08);
+    transition: background 0.2s;
+    font-weight: normal;
+    display: inline-flex;
+    align-items: center;
+}
+button:hover {
+    background: #232a13;
+}
+#results {
+    margin-top: 32px;
+    padding: 16px;
+    background: #1d723c; /* πιο σκούρο κυπαρισσί */
+    border-radius: 10px;
+    min-height: 40px;
+    box-shadow: 0 1px 4px rgba(90, 141, 238, 0.07);
+    color: #fff;
+    font-weight: bold;
+}
